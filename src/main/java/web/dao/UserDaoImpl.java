@@ -13,17 +13,6 @@ public class UserDaoImpl implements UserDao{
     @PersistenceContext
     private EntityManager em;
 
-//    @Override
-//    public void createUserTable() {
-//        String sql = "CREATE TABLE IF NOT EXIST `db_pp231`.`users` (\n" +
-//                "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-//                "  `name` VARCHAR(45) NULL,\n" +
-//                "  `surname` VARCHAR(45) NOT NULL,\n" +
-//                "  `age` TINYINT(3) NULL,\n" +
-//                "  `email` VARCHAR(45) NULL,\n" +
-//                "  PRIMARY KEY (`id`));";
-//    }
-
     @Override
     @Transactional
     public void saveUser(User user) {

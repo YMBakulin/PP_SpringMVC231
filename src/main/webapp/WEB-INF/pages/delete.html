@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:font-weight="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete user</title>
+</head>
+<body>
+<form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}" th:object="${user}" th:style="${user}? 'font-weight: bold; font-size: 15px;'">
+    <div align="center">
+        <h2 style="color:red">Delete user</h2>
+        <table border="1" style = "width: 600px; border-style: solid;">
+            <tr style="text-align: center; vertical-align: middle; background: darkgrey;">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>E-mail</th>
+            </tr>
+            <tr th:style="${user}? 'font-weight: bold; text-align: center;'">
+                <td th:utext="${user.getId()}"></td>
+                <td th:utext="${user.getName()}"></td>
+                <td th:utext="${user.getSurName()}"></td>
+                <td th:utext="${user.getAge()}"></td>
+                <td th:utext="${user.getEmail()}"></td>
+            </tr>
+
+        </table>
+    <br>
+    <input style="font-size: 20px; font-weight: bold; width: 200px; background: orangered;" type="submit" value="Delete"/>
+
+        <br>
+        <br>
+
+        <a style="font-size: 20px; font-weight: bold;" href="/">Back to main page</a>
+    </div>
+</form>
+
+</body>
+</html>
